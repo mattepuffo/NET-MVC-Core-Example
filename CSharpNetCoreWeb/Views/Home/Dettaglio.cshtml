@@ -1,0 +1,37 @@
+﻿@model Persona
+
+@{
+    ViewData["Title"] = "Dettaglio";
+}
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+            :
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Active)
+            :
+            @{
+                if (Model.Active)
+                {
+                    <span class="badge badge-success">SI</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger">NO</span>
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modifica", "Modifica", new { id = Model.ID }) |
+    @Html.ActionLink("Home", "Index")
+</p>  
